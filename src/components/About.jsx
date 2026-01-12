@@ -1,145 +1,164 @@
-import { Link } from "react-router-dom";
+// AboutUs.jsx
+import React from 'react';
+import './styles/AboutUs.css';
+// If you use images from public folder:
+// import logo from '../public/altitudealchemy.PNG';
+// import teamPhoto from '../public/aboutus_1.jfif';
 
-function About() {
+const AboutUs = () => {
   return (
-    <>
-      {/* Header */}
+    <div>
       <header>
         <div className="logo">
-          <img
-            src="/assets/images/altitudealchemy.PNG"
-            alt="Altitude Alchemy"
-          />
+          <img src="/altitudealchemy.PNG" alt="Altitude Alchemy Logo" />
         </div>
       </header>
 
-      {/* Navbar */}
       <nav>
-        <Link to="/">HOME</Link>
+        <a href="/">HOME</a>
 
         <div className="dropdown">
-          <button className="dropbtn">COMPANIES</button>
+          <button className="dropbtn">
+            COMPANIES <span style={{ fontSize: '12px' }}>▼</span>
+          </button>
           <div className="dropdown-content">
-            <Link to="/boeing">Boeing</Link>
-            <Link to="/hal">Hindustan Aeronautics</Link>
-            <Link to="/airbus">Airbus</Link>
-            <Link to="/dassault">Dassault Aviation</Link>
+            <a href="/boeing">Boeing</a>
+            <a href="/hal">Hindustan Aeronautics</a>
+            <a href="/airbus">Airbus</a>
+            <a href="/dassault">Dassault Aviation</a>
           </div>
         </div>
 
         <div className="dropdown">
-          <button className="dropbtn">MODELS</button>
+          <button className="dropbtn">
+            MODELS <span style={{ fontSize: '12px' }}>▼</span>
+          </button>
           <div className="dropdown-content">
-            <Link to="/boeing-models">Boeing</Link>
-            <Link to="/hal-models">HAL</Link>
-            <Link to="/airbus-models">Airbus</Link>
-            <Link to="/dassault-models">Dassault</Link>
+            <a href="/boeing-models">Boeing</a>
+            <a href="/hal-models">Hindustan Aeronautics</a>
+            <a href="/airbus-models">Airbus</a>
+            <a href="/dassault-models">Dassault Aviation</a>
           </div>
         </div>
 
-        <Link to="/updates">UPDATES</Link>
-        <Link to="/about">ABOUT US</Link>
+        <a href="/updates">UPDATES</a>
+        <a href="/about-us">ABOUT US</a>
       </nav>
 
-      {/* Content */}
       <h1>About Us</h1>
-      <h2>Welcome to our company!</h2>
 
-      <p style={{ textAlign: "center" }}>
-        At Altitude Alchemy, we take pride in being your premier destination
-        for comprehensive information about aircraft.
+      <h2>Welcome to our company!</h2>
+      <p>
+        At Altitude Alchemy, we take pride in being your premier destination for comprehensive information about aircraft. 
+        Whether you're an aviation enthusiast, a potential buyer, or someone eager to learn more about the fascinating world of aviation, 
+        you've come to the right place.
       </p>
 
       <h2>Aviation Education for Everyone</h2>
       <p>
-        Altitude Alchemy goes beyond specifications and prices; we're
-        passionate about aviation education. Our platform offers engaging
-        content, articles, and guides to help demystify the world of aircraft.
+        Altitude Alchemy goes beyond specifications and prices; we're passionate about aviation education. 
+        Our platform offers engaging content, articles, and guides to help demystify the world of aircraft. 
+        Learn about the latest technological advancements, industry trends, and the intricate details that make each aircraft unique. 
+        We believe that an informed audience is an empowered one.
       </p>
 
       <h2>Join Our Community</h2>
       <p>
-        Altitude Alchemy is not just a website; it's a community of aviation
-        enthusiasts, professionals, and curious minds.
+        Altitude Alchemy is not just a website; it's a community of aviation enthusiasts, professionals, and curious minds. 
+        Connect with like-minded individuals, share your passion for flight, and stay updated on the latest developments in the aviation industry.
       </p>
-
-      <p style={{ textAlign: "center" }}>
+      <p style={{ textAlign: 'center', fontWeight: 'bold' }}>
         Fly high with Altitude Alchemy!
       </p>
 
       <h2>Our Story</h2>
       <p>
-        We are UG students studying at Chanakya University. As part of our
-        academics, we developed this website.
+        We are the students of UG (undergraduation) studying at Chanakya University.
+        As part of our academics we have done this web page.
       </p>
 
       <h2>Our Mission</h2>
       <p>
-        Our website aims to provide a comprehensive resource for aviation
-        enthusiasts, pilots, and industry professionals by offering up-to-date
-        information and community engagement.
+        Our website aims to provide a comprehensive resource for aviation enthusiasts, pilots, and industry professionals.
+        We strive to offer up-to-date news and information on the latest developments in aviation technology, as well as reviews of
+        airlines and aircraft. Our goal is to create a community of like-minded individuals who share a passion for aviation.
       </p>
 
-      {/* Team Section */}
       <h2>Here are the team members</h2>
 
       <div className="row">
         {[
-          "Yateesh T M",
-          "Kousumi Paul",
-          "Yogesh K",
-          "A Yuvaraj",
-        ].map((name, index) => (
+          { name: 'Yateesh T M', role: 'Designer' },
+          { name: 'Kousumi Paul', role: 'Designer' },
+          { name: 'Yogesh K', role: 'Designer' },
+          { name: 'A Yuvaraj', role: 'Designer' },
+        ].map((member, index) => (
           <div className="column" key={index}>
-            <div className="card" style={{ width: "200px" }}>
+            <div className="card">
               <img
-                src="/assets/images/aboutus_1.jfif"
-                alt={name}
-                style={{ width: "100%" }}
+                src="/aboutus_1.jfif"
+                alt={member.name}
+                style={{ width: '100%' }}
               />
-              <h2>{name}</h2>
-              <p className="title">Designer</p>
-              <p>
-                Student of Chanakya University pursuing BCA degree.
-              </p>
+              <h2>{member.name}</h2>
+              <p className="title">{member.role}</p>
+              <p>Student of Chanakya University pursuing BCA degree.</p>
             </div>
           </div>
         ))}
       </div>
 
-      {/* References */}
       <article className="all-browsers">
-        <h1 style={{ textAlign: "center" }}>References & Credits</h1>
+        <h1 style={{ textAlign: 'center' }}>References & Credits</h1>
 
-        {[
-          "https://www.dassault-aviation.com/en/",
-          "https://hal-india.co.in/",
-          "https://www.boeing.com/",
-          "https://www.airbus.com/en",
-          "Pinterest",
-          "www.w3schools.com",
-        ].map((ref, index) => (
-          <article className="browser" key={index}>
-            <p style={{ textAlign: "center" }}>{ref}</p>
-          </article>
-        ))}
+        <div className="browser">
+          <p style={{ textAlign: 'center' }}>
+            <a href="https://www.dassault-aviation.com/en/" target="_blank" rel="noopener noreferrer">
+              https://www.dassault-aviation.com/en/
+            </a>
+          </p>
+        </div>
+
+        <div className="browser">
+          <p style={{ textAlign: 'center' }}>
+            <a href="https://hal-india.co.in/" target="_blank" rel="noopener noreferrer">
+              https://hal-india.co.in/
+            </a>
+          </p>
+        </div>
+
+        <div className="browser">
+          <p style={{ textAlign: 'center' }}>
+            <a href="https://www.boeing.com/" target="_blank" rel="noopener noreferrer">
+              https://www.boeing.com/
+            </a>
+          </p>
+        </div>
+
+        <div className="browser">
+          <p style={{ textAlign: 'center' }}>
+            <a href="https://www.airbus.com/en" target="_blank" rel="noopener noreferrer">
+              https://www.airbus.com/en
+            </a>
+          </p>
+        </div>
+
+        <div className="browser">
+          <p style={{ textAlign: 'center' }}>Pinterest</p>
+        </div>
+
+        <div className="browser">
+          <p style={{ textAlign: 'center' }}>www.w3schools.com</p>
+        </div>
       </article>
 
-      {/* Footer */}
       <footer>
-        <p>
-          © 2023 Altitude Alchemy. All Rights Reserved |
-          info@altitudealchemy.com
-        </p>
-
+        <p>&copy; 2023 Altitude Alchemy. All Rights Reserved | info@altitudealchemy.com</p>
         <h3>Follow Us on:</h3>
-        <p>Whatsapp</p>
-        <p>X</p>
-        <p>Instagram</p>
-        <p>G-mail</p>
+        <p>Whatsapp • X • Instagram • G-mail</p>
       </footer>
-    </>
+    </div>
   );
-}
+};
 
-export default About;
+export default AboutUs;
